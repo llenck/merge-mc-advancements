@@ -26,18 +26,18 @@ def maybe_file_pair(uuid):
         return []
 
 def migrate(old, new):
-    old = j.load(open(old))
-    new = j.load(open(new))
-    res = {"DataVersion": new["DataVersion"]}
-    del old["DataVersion"]
-    del new["DataVersion"]
+    old_d = j.load(open(old))
+    new_d = j.load(open(new))
+    res = {"DataVersion": new_d["DataVersion"]}
+    del old_d["DataVersion"]
+    del new_d["DataVersion"]
 
-    for k in set(old.keys()) | set(new.keys()):
-        may_old = old.get(k)
+    for k in set(old_d.keys()) | set(new_d.keys()):
+        may_old = old_d.get(k)
         may_old_criteria = may_old["criteria"] if may_old else dict()
         may_old_done = may_old["done"] if may_old else False
 
-        may_new = new.get(k)
+        may_new = new_d.get(k)
         may_new_criteria = may_new["criteria"] if may_new else dict()
         may_new_done = may_new["done"] if may_new else False
 
