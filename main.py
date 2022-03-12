@@ -56,6 +56,8 @@ def migrate(old, new):
 # remove ".json" from files in current dir
 uuids = map(lambda s: s[:-5], listdir())
 
+# TODO the whole programs spends 99% time while waiting for http responses.
+# if this map was parallelized, it would be *much* faster (up to player_count times)
 file_maps = sum(map(maybe_file_pair, uuids), start=[])
 
 for (old, new) in file_maps:

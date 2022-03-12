@@ -1,0 +1,7 @@
+Migrates (possibly merges) Minecraft advancements from files for online uuids to the corresponding files with offline uuids.
+
+Was useful for a server of a friend, where we used a proxy for letting logged-in players connect, so we could also allow people to join (to the actual, offline-mode server) who didn't want to migrate from Mojang to MS accounts.
+
+To use this, run this from within the "advancements" directory. Make sure to have "requests" installed!
+
+I don't take any blame for broken migrations. If you spot a mistake, you are however invited to open an issue or a PR :)
